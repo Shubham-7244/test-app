@@ -82,7 +82,7 @@
 								<server>connectedApp</server>
 								<environment>Development</environment>
 								<region>${region}</region>
-								<applicationName>unicorn-${project.artifactId}-$[mule.env}</applicationName>
+								<applicationName>unicorn-${project.artifactId}-${mule.env}</applicationName>
 								<workers>${workers}</workers>
 								<workerType>${workerType}</workerType>
 								<properties>
@@ -192,7 +192,7 @@
 								<targetType>${target.type}</targetType>
 								<server>connectedApp</server>
 								<environment>Development</environment>
-								<applicationName>unicorn-${project.artifactId}-$[mule.env}</applicationName>
+								<applicationName>unicorn-${project.artifactId}-${mule.env}</applicationName>
 								<properties>
 									<mule.env>${mule.env}</mule.env>
 								</properties>
@@ -219,7 +219,7 @@
 								<targetType>${target.type}</targetType>
 								<server>connectedApp</server>
 								<environment>Test</environment>
-								<applicationName>unicorn-${project.artifactId}-$[mule.env}</applicationName>
+								<applicationName>unicorn-${project.artifactId}-${mule.env}</applicationName>
 								<properties>
 									<mule.env>${mule.env}</mule.env>
 								</properties>
@@ -246,7 +246,7 @@
 								<targetType>${target.type}</targetType>
 								<server>connectedApp</server>
 								<environment>Production</environment>
-								<applicationName>unicorn-${project.artifactId}-$[mule.env}</applicationName>
+								<applicationName>unicorn-${project.artifactId}-${mule.env}</applicationName>
 								<properties>
 									<mule.env>${mule.env}</mule.env>
 								</properties>

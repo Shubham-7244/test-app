@@ -1,0 +1,14 @@
+#%RAML 1.0
+title: <YOUR_TITLE>
+version: v1
+
+
+
+/:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include healthCheck.raml
+              

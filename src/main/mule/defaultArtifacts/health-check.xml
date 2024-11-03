@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<sub-flow name="health-checkSub_Flow" doc:id="21602256-97f3-468c-8ad9-a53775b2ca69" >
+		<logger level="INFO" doc:name="health-start" doc:id="3f46fe8c-a70e-4dfa-b558-17fdad30c2b6" message="Health check started"/>
+		<ee:transform doc:name="health-check" doc:id="2e85928e-2788-478b-81e9-c4d4ae3dbac8">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+  server: server.host,
+  status: "RUNNING",
+  time: now()
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="health-succes" doc:id="9b827e86-43d8-4636-ac75-0c4324ff453c" message="Health check end"/>
+	</sub-flow>
+</mule>

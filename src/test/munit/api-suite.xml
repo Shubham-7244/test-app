@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="api-suite.xml" />
+	<munit:test name="get:\:api-config-test" doc:id="9e095c47-c6a6-4507-9be7-cd92d24c02f1" >
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\:api-config" doc:id="05e14ab0-9f3e-43f3-86b2-442e27250506" name="get:\:api-config"/>
+		</munit:execution>
+		<munit:validation>
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="00b0e9a9-a5a2-44aa-8f03-f07161f3138d" actual="#[payload.status]" expected='#["RUNNING"]'/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

@@ -1,0 +1,7 @@
+api:
+  id: "1234"
+  
+http:
+  host: "locahost"
+  port: "8081"
+  basePath: "/v1/"

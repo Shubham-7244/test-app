@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway" xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd
+http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b8499486-3d33-4cb0-8665-0c951b1786ee" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="8a3956e1-a04a-4cde-b969-f47627fc49c8" file="properties/${mule.env}.yaml" />
+	<secure-properties:config name="Secure_Properties_Config" doc:name="Secure Properties Config" doc:id="72eab5cd-e160-474a-99d9-5e0623a06520" file="properties/${mule.env}-secure.yaml" key="$[mule.vaultKey}" />
+	<import doc:name="Import" doc:id="63c960db-bf4f-4cc7-9c1b-23972f9773f0" file="error-handler.xml" />
+	<global-property doc:name="Global Property" doc:id="4f3d31c9-aac1-4732-aa0b-73de9b9e26bb" name="mule.vaultKey" value="unicorn" />
+	<global-property doc:name="Global Property" doc:id="67ed5a3e-94d8-4667-9bdf-29f0d818ca30" name="mule.env" value="dev" />
+</mule>

@@ -57,6 +57,7 @@
 							<coverage>
 								<runCoverage>true</runCoverage>
 								<formats>
+									<format>json</format>
 									<format>html</format>
 								</formats>
 							</coverage>
@@ -283,6 +284,7 @@
 					<coverage>
 						<runCoverage>true</runCoverage>
 						<formats>
+							<format>json</format>
 							<format>html</format>
 						</formats>
 					</coverage>
